@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rake'
 gem 'sinatra'
+gem 'require_all'
 
-group :test do
+group :development do
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop'
