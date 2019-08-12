@@ -1,3 +1,14 @@
+
+require 'require_all'
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require 'sinatra'
+
+require_all 'app'
+
+Capybara.app = Bookmark_mgr
+
 require 'simplecov'
 require 'simplecov-console'
 
