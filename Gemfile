@@ -1,6 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'rspec'
+gem 'rake'
 gem 'sinatra'
-gem 'capybara'
 
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
