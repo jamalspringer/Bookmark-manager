@@ -1,8 +1,8 @@
 require 'capybara'
 require 'capybara/rspec'
 require 'sinatra'
-require 'spec_helper'
 require 'require_all'
+require_relative '../spec/spec_helper'
 
 require_all 'app'
 
