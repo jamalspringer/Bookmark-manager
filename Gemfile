@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rake'
 gem 'sinatra'
 gem 'require_all'
+gem 'pg'
 
 group :development do
   gem 'capybara'

@@ -3,6 +3,7 @@ require 'capybara/rspec'
 require 'sinatra'
 require 'require_all'
 require_relative '../spec/spec_helper'
+require 'pg'
 
 require_all 'app'
 
