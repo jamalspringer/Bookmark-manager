@@ -8,7 +8,7 @@ class Bookmark_mgr < Sinatra::Base
   end
 
   get '/' do
-    "Welcome to the Bookmark Manager!"
+    redirect('/bookmarks')
   end
 
   get '/bookmarks' do
@@ -18,6 +18,16 @@ class Bookmark_mgr < Sinatra::Base
         "http://www.google.com"
     ]
     erb :'bookmarks/index'
+  end
+
+  get '/bookmarks/add' do
+    erb :'bookmarks/add'
+  end
+
+  post '/bookmarks/create' do
+    Bookmark.create(params[:url])
+    redirect('/bookmarks')
+
   end
 
   run! if app_file == $0
