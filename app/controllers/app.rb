@@ -12,11 +12,7 @@ class Bookmark_mgr < Sinatra::Base
   end
 
   get '/bookmarks' do
-    @bookmarks = [
-        "http://www.makersacademy.com",
-        "http://www.destroyallsoftware.com",
-        "http://www.google.com"
-    ]
+    @bookmarks = Bookmark.all
     erb :'bookmarks/index'
   end
 
@@ -25,7 +21,7 @@ class Bookmark_mgr < Sinatra::Base
   end
 
   post '/bookmarks/create' do
-    Bookmark.create(params[:url])
+    Bookmark.create(url: params['url'])
     redirect('/bookmarks')
 
   end
