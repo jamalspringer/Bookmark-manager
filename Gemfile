@@ -4,6 +4,7 @@ gem 'rake'
 gem 'sinatra'
 gem 'require_all'
 gem 'pg'
+gem 'url'
 
 group :development do
   gem 'capybara'

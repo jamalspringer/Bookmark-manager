@@ -1,8 +1,12 @@
 <h1> Welcome to the Bookmark Manager!</h1>
 
 <ul>
-  <%@bookmarks.each do |bookmark| %>
-    <li><%= bookmark %></li>
+  <% @bookmarks.each do |bookmark| %>
+    <li>
+      <a href="<%= bookmark.url %>">
+        <%= bookmark.title %>
+      </a>
+    </li>
   <% end %>
 </ul>
 

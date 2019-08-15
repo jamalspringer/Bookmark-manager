@@ -5,8 +5,9 @@ feature 'Adding bookmarks' do
   visit('/bookmarks')
   click_link('Add Bookmark')
   fill_in('url', with: 'www.github.com')
+  fill_in('title', with: 'Github repo site')
   click_button("Submit")
-  expect(page).to have_content 'www.github.com'
+  expect(page).to have_link('Github repo site', href: 'www.github.com')
   end
 end
 
