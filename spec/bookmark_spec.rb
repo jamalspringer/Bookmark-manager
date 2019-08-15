@@ -15,7 +15,6 @@ describe 'bookmark' do
 
   describe '.all' do
     it 'returns a list of bookmarks' do
-
       bookmark = Bookmark.create(url: "http://www.makersacademy.com", title: "Makers Academy")
       Bookmark.create(url: "http://www.destroyallsoftware.com", title: "Destroy All Software")
       Bookmark.create(url: "http://www.google.com", title: "Google")

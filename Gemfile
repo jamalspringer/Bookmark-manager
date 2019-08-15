@@ -5,6 +5,7 @@ gem 'sinatra'
 gem 'require_all'
 gem 'pg'
 gem 'url'
+gem 'valid_url'
 
 group :development do
   gem 'capybara'

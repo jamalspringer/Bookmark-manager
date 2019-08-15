@@ -1,5 +1,6 @@
 require_relative '../config/environment'
 
+
 class Bookmark
 
   attr_reader :id, :title, :url
@@ -10,22 +11,6 @@ class Bookmark
     @url = url
   end
 
-  # class_eval do
-  #   def is_valid_url?
-  #     uri = URI.parse self
-  #     uri.kind_of? URI::HTTP
-  #   rescue URI::InvalidURIError
-  #     false
-  #   end
-  # end
-  #
-  # def is_url?(url)
-  #   if url.is_valid_url?
-  #     true
-  #   else
-  #     false
-  #   end
-  # end
 
   def self.all
     if ENV['ENVIRONMENT'] == 'test'
@@ -39,7 +24,7 @@ class Bookmark
   end
 
   def self.create(url:, title:)
-    # return false unless is_url?(url)
+    return false unless is_url?(url)
     if ENV['ENVIRONMENT'] == 'test'
       connection = PG.connect(dbname: 'bookmark_manager_test')
     else
