@@ -23,7 +23,13 @@ class Bookmark_mgr < Sinatra::Base
   post '/bookmarks/create' do
     Bookmark.create(url: params['url'], title: params[:title])
     redirect('/bookmarks')
+  end
 
+  enable :sessions, :method_override
+
+  delete '/bookmarks/:id' do
+    Bookmark.delete(id: params[:id])
+    redirect '/bookmarks'
   end
 
   run! if app_file == $0
